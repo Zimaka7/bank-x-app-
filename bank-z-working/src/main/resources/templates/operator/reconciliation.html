@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconciliation - Bank Z Operator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/operator/dashboard">
+                <i class="fas fa-university me-2"></i>Bank Z - Operator Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-1"></i>Operator
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/transactions">
+                                <i class="fas fa-exchange-alt me-2"></i>Transaction Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/batch-upload">
+                                <i class="fas fa-upload me-2"></i>Batch Upload
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/operator/reconciliation">
+                                <i class="fas fa-balance-scale me-2"></i>Reconciliation
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/api-logs">
+                                <i class="fas fa-list-alt me-2"></i>API Logs & Monitoring
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/admin">
+                                <i class="fas fa-cogs me-2"></i>Admin Panel
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Reconciliation</h1>
+                </div>
+
+                <!-- Success/Error Messages -->
+                <div th:if="${successMessage}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span th:text="${successMessage}"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span th:text="${errorMessage}"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+
+                <!-- Upload Reconciliation Form -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Upload Reconciliation File</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/operator/reconciliation/process" enctype="multipart/form-data">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="reconciliationDate" class="form-label">Reconciliation Date</label>
+                                    <input type="date" class="form-control" id="reconciliationDate" name="reconciliationDate" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="file" class="form-label">Reconciliation File</label>
+                                    <input type="file" class="form-control" id="file" name="file" accept=".csv,.json" required>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-balance-scale me-2"></i>Process Reconciliation
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Reconciliation History -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Reconciliation History</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Total Records</th>
+                                        <th>Matched</th>
+                                        <th>Mismatched</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="log : ${reconciliationLogs}">
+                                        <td th:text="${log.date}">2025-07-12</td>
+                                        <td>
+                                            <span class="badge bg-success" th:text="${log.status}">COMPLETED</span>
+                                        </td>
+                                        <td th:text="${log.totalRecords}">150</td>
+                                        <td class="text-success" th:text="${log.matched}">147</td>
+                                        <td class="text-danger" th:text="${log.mismatched}">3</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-download me-1"></i>Download Report
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

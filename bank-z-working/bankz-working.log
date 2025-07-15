@@ -1,0 +1,2555 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36mcom.bankz:bank-z-working[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding bank-z-working 1.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.2.0:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mbank-z-working[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mbank-z-working[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 8 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mbank-z-working[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :input tree
+[[1;34mINFO[m] Compiling 21 source files with javac [debug release 17] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mbank-z-working[0;1m ---[m
+[[1;34mINFO[m] Not copying test resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mbank-z-working[0;1m ---[m
+[[1;34mINFO[m] Not compiling test sources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.2.0:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mbank-z-working[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.2.0:run[m [1m(default-cli)[m @ [36mbank-z-working[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-07-15 10:55:53 [main] INFO  com.bankz.BankZApplication - Starting BankZApplication using Java 17.0.15 with PID 26932 (/opt/absa/bank-z-working/target/classes started by root in /opt/absa/bank-z-working)
+2025-07-15 10:55:53 [main] DEBUG com.bankz.BankZApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-07-15 10:55:53 [main] INFO  com.bankz.BankZApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-15 10:55:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 10:55:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+2025-07-15 10:55:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 9091 (http)
+2025-07-15 10:55:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-15 10:55:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-07-15 10:55:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-15 10:55:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1345 ms
+2025-07-15 10:55:55 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 10:55:55 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-07-15 10:55:55 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-15 10:55:55 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 10:55:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-15 10:55:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ca546a1
+2025-07-15 10:55:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-15 10:55:55 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 10:55:56 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 10:55:56 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists bankz.bankz_users 
+       add column sa_id_number varchar(13)
+2025-07-15 10:55:56 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists bankz.bankz_users 
+       drop constraint if exists UK_pl3ylly69xirsh1vol80ordq6
+2025-07-15 10:55:56 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-07-15 10:55:56 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_pl3ylly69xirsh1vol80ordq6" of relation "bankz_users" does not exist, skipping
+2025-07-15 10:55:56 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists bankz.bankz_users 
+       add constraint UK_pl3ylly69xirsh1vol80ordq6 unique (sa_id_number)
+2025-07-15 10:55:56 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 10:55:57 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-15 10:55:57 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 10:55:57 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 18 mappings in 'requestMappingHandlerMapping'
+2025-07-15 10:55:57 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-07-15 10:55:58 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@32be672d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23e54c8a, org.springframework.security.web.context.SecurityContextHolderFilter@3d339541, org.springframework.security.web.header.HeaderWriterFilter@1ae8556c, org.springframework.web.filter.CorsFilter@276e5add, org.springframework.security.web.csrf.CsrfFilter@c1d9c40, org.springframework.security.web.authentication.logout.LogoutFilter@7bc46dde, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@35e63d26, org.springframework.security.web.session.ConcurrentSessionFilter@24489d12, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72364a40, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ad2cb6d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@736af6f3, org.springframework.security.web.session.SessionManagementFilter@2da3d7d3, org.springframework.security.web.access.ExceptionTranslationFilter@7b186fb8, org.springframework.security.web.access.intercept.AuthorizationFilter@3325f17]
+2025-07-15 10:55:58 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-07-15 10:55:58 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-07-15 10:55:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 9091 (http) with context path ''
+2025-07-15 10:55:58 [main] INFO  com.bankz.BankZApplication - Started BankZApplication in 5.089 seconds (process running for 5.428)
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=? 
+    fetch
+        first ? rows only
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=? 
+    fetch
+        first ? rows only
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=? 
+    fetch
+        first ? rows only
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_customers bz1_0 
+    where
+        bz1_0.email=? 
+    fetch
+        first ? rows only
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        bankz.bankz_customers
+        (address, created_at, email, first_name, id_number, last_name, phone_number) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-15 10:55:58 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23505
+2025-07-15 10:55:58 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: duplicate key value violates unique constraint "uk_i8uh07yhjbflbvs3krp5jo827"
+  Detail: Key (id_number)=(8001015009087) already exists.
+⚠️ Error creating customer Thabo Mthembu: could not execute statement [ERROR: duplicate key value violates unique constraint "uk_i8uh07yhjbflbvs3krp5jo827"
+  Detail: Key (id_number)=(8001015009087) already exists.] [insert into bankz.bankz_customers (address,created_at,email,first_name,id_number,last_name,phone_number) values (?,?,?,?,?,?,?)]; SQL [insert into bankz.bankz_customers (address,created_at,email,first_name,id_number,last_name,phone_number) values (?,?,?,?,?,?,?)]; constraint [uk_i8uh07yhjbflbvs3krp5jo827]
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_customers bz1_0 
+    where
+        bz1_0.email=? 
+    fetch
+        first ? rows only
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        bankz.bankz_customers
+        (address, created_at, email, first_name, id_number, last_name, phone_number) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-15 10:55:58 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23505
+2025-07-15 10:55:58 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: duplicate key value violates unique constraint "uk_i8uh07yhjbflbvs3krp5jo827"
+  Detail: Key (id_number)=(8505125009088) already exists.
+⚠️ Error creating customer Nomsa Dlamini: could not execute statement [ERROR: duplicate key value violates unique constraint "uk_i8uh07yhjbflbvs3krp5jo827"
+  Detail: Key (id_number)=(8505125009088) already exists.] [insert into bankz.bankz_customers (address,created_at,email,first_name,id_number,last_name,phone_number) values (?,?,?,?,?,?,?)]; SQL [insert into bankz.bankz_customers (address,created_at,email,first_name,id_number,last_name,phone_number) values (?,?,?,?,?,?,?)]; constraint [uk_i8uh07yhjbflbvs3krp5jo827]
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_customers bz1_0 
+    where
+        bz1_0.email=? 
+    fetch
+        first ? rows only
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        bankz.bankz_customers
+        (address, created_at, email, first_name, id_number, last_name, phone_number) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-15 10:55:58 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23505
+2025-07-15 10:55:58 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: duplicate key value violates unique constraint "uk_i8uh07yhjbflbvs3krp5jo827"
+  Detail: Key (id_number)=(7012255009089) already exists.
+⚠️ Error creating customer Sipho Nkomo: could not execute statement [ERROR: duplicate key value violates unique constraint "uk_i8uh07yhjbflbvs3krp5jo827"
+  Detail: Key (id_number)=(7012255009089) already exists.] [insert into bankz.bankz_customers (address,created_at,email,first_name,id_number,last_name,phone_number) values (?,?,?,?,?,?,?)]; SQL [insert into bankz.bankz_customers (address,created_at,email,first_name,id_number,last_name,phone_number) values (?,?,?,?,?,?,?)]; constraint [uk_i8uh07yhjbflbvs3krp5jo827]
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_customers bz1_0 
+    where
+        bz1_0.email=? 
+    fetch
+        first ? rows only
+✅ Customer already exists: Lerato Mokoena
+2025-07-15 10:55:58 [main] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id 
+    from
+        bankz.bankz_customers bz1_0 
+    where
+        bz1_0.email=? 
+    fetch
+        first ? rows only
+✅ Customer already exists: Mandla van der Merwe
+
+============================================================
+🏛️  BANK Z APPLICATION STARTED SUCCESSFULLY
+============================================================
+📍 Access BankZ at: http://localhost:9091/login
+👤 Admin Login: admin / admin123
+👤 Operator Login: operator / operator123
+👤 Auditor Login: auditor / auditor123
+============================================================
+🔗 Bank X Integration: http://localhost:9090
+📊 Sample customers and accounts created
+============================================================
+
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6e98fd10
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2fb9695a
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/bankx/status
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:9091/api/bankx/status?continue to session
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-07-15 10:55:59 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.enabled,
+        bz1_0.first_name,
+        bz1_0.last_name,
+        bz1_0.password,
+        bz1_0.role,
+        bz1_0.sa_id_number,
+        bz1_0.username 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=?
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 544C8A77A01FFEB2C7ED7CB0170EBB05
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 11C0E967F2C6A00ECEC96EB0496D658E, for principal org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=544C8A77A01FFEB2C7ED7CB0170EBB05], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@3592a8a1]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=544C8A77A01FFEB2C7ED7CB0170EBB05], Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /operator/dashboard
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/dashboard
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=544C8A77A01FFEB2C7ED7CB0170EBB05], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/dashboard
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/dashboard", parameters={}
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#dashboard(Model)
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        count(bz1_0.id) 
+    from
+        bankz.bankz_accounts bz1_0
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:9090/actuator/health
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=544C8A77A01FFEB2C7ED7CB0170EBB05], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /favicon.ico
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=544C8A77A01FFEB2C7ED7CB0170EBB05], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Jul 15 10:56:03 UTC 2025, status=404, error=Not Found, path=/favicon.ico}]
+2025-07-15 10:56:03 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/transactions
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=544C8A77A01FFEB2C7ED7CB0170EBB05], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/transactions
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/transactions", parameters={}
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#transactions(Model, String, String, String, String, String)
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+DEBUG: Found 5 customers
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0
+DEBUG: AccountService.getAllAccounts() found 10 accounts
+DEBUG: Account BZ-ACC-003 belongs to Jane
+DEBUG: Account BZ-ACC-004 belongs to Jane
+DEBUG: Account BZ-ACC-005 belongs to Bob
+DEBUG: Account BZ-ACC-006 belongs to Bob
+DEBUG: Account BZ-ACC-001 belongs to John
+DEBUG: Account BZ-ACC-007 belongs to Lerato
+DEBUG: Account BZ-ACC-008 belongs to Lerato
+DEBUG: Account BZ-ACC-009 belongs to Mandla
+DEBUG: Account BZ-ACC-002 belongs to John
+DEBUG: Account BZ-ACC-010 belongs to Mandla
+DEBUG: Found 10 accounts
+DEBUG: Account BZ-ACC-003 - Jane Smith
+DEBUG: Account BZ-ACC-004 - Jane Smith
+DEBUG: Account BZ-ACC-005 - Bob Johnson
+DEBUG: Account BZ-ACC-006 - Bob Johnson
+DEBUG: Account BZ-ACC-001 - John Doe
+DEBUG: Account BZ-ACC-007 - Lerato Mokoena
+DEBUG: Account BZ-ACC-008 - Lerato Mokoena
+DEBUG: Account BZ-ACC-009 - Mandla van der Merwe
+DEBUG: Account BZ-ACC-002 - John Doe
+DEBUG: Account BZ-ACC-010 - Mandla van der Merwe
+DEBUG: Added 10 accounts to model
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 10:56:15 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:07:41 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /register
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.csrf.CsrfFilter - Invalid CSRF token found for http://localhost:9091/register
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Forwarding to /login?error=access_denied with status code 403
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login?error=access_denied
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.enabled,
+        bz1_0.first_name,
+        bz1_0.last_name,
+        bz1_0.password,
+        bz1_0.role,
+        bz1_0.sa_id_number,
+        bz1_0.username 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=?
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user 'alicejohnson'
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?error=true
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 11:07:42 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/register", parameters={}
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZRegistrationController#register(Model)
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /css/style.css
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /css/style.css
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://41.76.107.45:9091/error?continue to session
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [text/css, */*;q=0.1]
+2025-07-15 11:08:36 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-07-15 11:08:37 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:12:08 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /register
+2025-07-15 11:12:08 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.csrf.CsrfFilter - Invalid CSRF token found for http://localhost:9091/register
+2025-07-15 11:12:08 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Forwarding to /login?error=access_denied with status code 403
+2025-07-15 11:12:08 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login?error=access_denied
+2025-07-15 11:12:08 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.enabled,
+        bz1_0.first_name,
+        bz1_0.last_name,
+        bz1_0.password,
+        bz1_0.role,
+        bz1_0.sa_id_number,
+        bz1_0.username 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=?
+2025-07-15 11:12:09 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user 'sarah.operator'
+2025-07-15 11:12:09 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?error=true
+2025-07-15 11:12:12 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bankx/transaction
+2025-07-15 11:12:12 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:12:12 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bankx/transaction
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bankx/transactions
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/bankx/reconciliation
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:12:13 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/register", parameters={}
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZRegistrationController#register(Model)
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /css/style.css
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /css/style.css
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://41.76.107.45:9091/error?continue to session
+2025-07-15 11:14:57 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [text/css, */*;q=0.1]
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-07-15 11:14:58 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 11:15:06 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-07-15 11:15:07 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.enabled,
+        bz1_0.first_name,
+        bz1_0.last_name,
+        bz1_0.password,
+        bz1_0.role,
+        bz1_0.sa_id_number,
+        bz1_0.username 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=?
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 2A0D4EA38DCE3E5F473FCC1331B069D1
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 55A6EE5BBEBD32D56C35AF5F702E6881, for principal org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=105.245.114.126, SessionId=2A0D4EA38DCE3E5F473FCC1331B069D1], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@4ff8aeea]
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=105.245.114.126, SessionId=2A0D4EA38DCE3E5F473FCC1331B069D1], Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /operator/dashboard
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/dashboard
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=105.245.114.126, SessionId=2A0D4EA38DCE3E5F473FCC1331B069D1], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/dashboard
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/dashboard", parameters={}
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#dashboard(Model)
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        count(bz1_0.id) 
+    from
+        bankz.bankz_accounts bz1_0
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:10 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:9090/actuator/health
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=105.245.114.126, SessionId=2A0D4EA38DCE3E5F473FCC1331B069D1], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /favicon.ico
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=105.245.114.126, SessionId=2A0D4EA38DCE3E5F473FCC1331B069D1], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /error
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Jul 15 11:15:11 UTC 2025, status=404, error=Not Found, path=/favicon.ico}]
+2025-07-15 11:15:11 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/transactions
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=105.245.114.126, SessionId=2A0D4EA38DCE3E5F473FCC1331B069D1], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/transactions
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/transactions", parameters={}
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#transactions(Model, String, String, String, String, String)
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+DEBUG: Found 5 customers
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0
+DEBUG: AccountService.getAllAccounts() found 10 accounts
+DEBUG: Account BZ-ACC-003 belongs to Jane
+DEBUG: Account BZ-ACC-004 belongs to Jane
+DEBUG: Account BZ-ACC-005 belongs to Bob
+DEBUG: Account BZ-ACC-006 belongs to Bob
+DEBUG: Account BZ-ACC-001 belongs to John
+DEBUG: Account BZ-ACC-007 belongs to Lerato
+DEBUG: Account BZ-ACC-008 belongs to Lerato
+DEBUG: Account BZ-ACC-009 belongs to Mandla
+DEBUG: Account BZ-ACC-002 belongs to John
+DEBUG: Account BZ-ACC-010 belongs to Mandla
+DEBUG: Found 10 accounts
+DEBUG: Account BZ-ACC-003 - Jane Smith
+DEBUG: Account BZ-ACC-004 - Jane Smith
+DEBUG: Account BZ-ACC-005 - Bob Johnson
+DEBUG: Account BZ-ACC-006 - Bob Johnson
+DEBUG: Account BZ-ACC-001 - John Doe
+DEBUG: Account BZ-ACC-007 - Lerato Mokoena
+DEBUG: Account BZ-ACC-008 - Lerato Mokoena
+DEBUG: Account BZ-ACC-009 - Mandla van der Merwe
+DEBUG: Account BZ-ACC-002 - John Doe
+DEBUG: Account BZ-ACC-010 - Mandla van der Merwe
+DEBUG: Added 10 accounts to model
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 11:15:21 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/transactions
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id 55A6EE5BBEBD32D56C35AF5F702E6881
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://41.76.107.45:9091/operator/transactions?continue to session
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:05:28 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:07:40 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:07:42 [http-nio-0.0.0.0-9091-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/register", parameters={}
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZRegistrationController#register(Model)
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:07:46 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /css/style.css
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /css/style.css
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://41.76.107.45:9091/error?continue to session
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [text/css, */*;q=0.1]
+2025-07-15 12:07:47 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/register", parameters={}
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZRegistrationController#register(Model)
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /css/style.css
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /css/style.css
+2025-07-15 12:11:48 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://41.76.107.45:9091/error?continue to session
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [text/css, */*;q=0.1]
+2025-07-15 12:11:49 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/register", parameters={}
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZRegistrationController#register(Model)
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /css/style.css
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /css/style.css
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://41.76.107.45:9091/error?continue to session
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://41.76.107.45:9091/login
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [text/css, */*;q=0.1]
+2025-07-15 12:13:35 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/dashboard
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id 11C0E967F2C6A00ECEC96EB0496D658E
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:9091/operator/dashboard?continue to session
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:13:39 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:13:43 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-07-15 12:13:43 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.enabled,
+        bz1_0.first_name,
+        bz1_0.last_name,
+        bz1_0.password,
+        bz1_0.role,
+        bz1_0.sa_id_number,
+        bz1_0.username 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=?
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 8B9622F2956B952F3E7B59E208977466
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 5E757DE4C34BE7904FD636A43A31B8D5, for principal org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@2f050a87]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /operator/dashboard
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/dashboard
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/dashboard
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/dashboard", parameters={}
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#dashboard(Model)
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        count(bz1_0.id) 
+    from
+        bankz.bankz_accounts bz1_0
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:9090/actuator/health
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:13:44 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/batch-upload
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/batch-upload
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/batch-upload", parameters={}
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#batchUpload(Model)
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.batchUpload(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.batchUpload(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:13:51 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/reconciliation
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/reconciliation
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/reconciliation", parameters={}
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#reconciliation(Model)
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.reconciliation(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.reconciliation(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:13:53 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/admin
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/admin
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/admin", parameters={}
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#admin(Model)
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.admin(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.admin(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:18:10 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 12:18:17 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/register", parameters={}
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZRegistrationController#register(Model)
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/actuator/health", parameters={}
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/health.]
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:9091/error?continue to session
+2025-07-15 12:18:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:9091/login;jsessionid=C6672A7635B0B464D99E690E049985D1
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#home()
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZWebController#login()
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:19:35 [http-nio-0.0.0.0-9091-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=8B9622F2956B952F3E7B59E208977466], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.enabled,
+        bz1_0.first_name,
+        bz1_0.last_name,
+        bz1_0.password,
+        bz1_0.role,
+        bz1_0.sa_id_number,
+        bz1_0.username 
+    from
+        bankz.bankz_users bz1_0 
+    where
+        bz1_0.username=?
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 5E757DE4C34BE7904FD636A43A31B8D5
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 1529EDDF8B2E217923D55EE2FAC3EE9E, for principal org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@2f050a87]
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 12:19:38 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /operator/dashboard
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/dashboard
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/dashboard
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/dashboard", parameters={}
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#dashboard(Model)
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.dashboard(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        count(bz1_0.id) 
+    from
+        bankz.bankz_accounts bz1_0
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.customer_id=?
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0 
+    where
+        bz1_0.account_id=? 
+    order by
+        bz1_0.created_at desc
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:9090/actuator/health
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:19:39 [http-nio-0.0.0.0-9091-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/api-logs
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/api-logs
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/api-logs", parameters={}
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#apiLogs(Model)
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.apiLogs(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.apiLogs(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:19:46 [http-nio-0.0.0.0-9091-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/transactions
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/transactions
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/transactions", parameters={}
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#transactions(Model, String, String, String, String, String)
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+DEBUG: Found 5 customers
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0
+DEBUG: AccountService.getAllAccounts() found 10 accounts
+DEBUG: Account BZ-ACC-003 belongs to Jane
+DEBUG: Account BZ-ACC-004 belongs to Jane
+DEBUG: Account BZ-ACC-005 belongs to Bob
+DEBUG: Account BZ-ACC-006 belongs to Bob
+DEBUG: Account BZ-ACC-001 belongs to John
+DEBUG: Account BZ-ACC-007 belongs to Lerato
+DEBUG: Account BZ-ACC-008 belongs to Lerato
+DEBUG: Account BZ-ACC-009 belongs to Mandla
+DEBUG: Account BZ-ACC-002 belongs to John
+DEBUG: Account BZ-ACC-010 belongs to Mandla
+DEBUG: Found 10 accounts
+DEBUG: Account BZ-ACC-003 - Jane Smith
+DEBUG: Account BZ-ACC-004 - Jane Smith
+DEBUG: Account BZ-ACC-005 - Bob Johnson
+DEBUG: Account BZ-ACC-006 - Bob Johnson
+DEBUG: Account BZ-ACC-001 - John Doe
+DEBUG: Account BZ-ACC-007 - Lerato Mokoena
+DEBUG: Account BZ-ACC-008 - Lerato Mokoena
+DEBUG: Account BZ-ACC-009 - Mandla van der Merwe
+DEBUG: Account BZ-ACC-002 - John Doe
+DEBUG: Account BZ-ACC-010 - Mandla van der Merwe
+DEBUG: Added 10 accounts to model
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:19:50 [http-nio-0.0.0.0-9091-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /operator/transactions/create
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /operator/transactions/create
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/operator/transactions/create", parameters={masked}
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#createTransaction(String, BigDecimal, String, String, String, String, String, RedirectAttributes)
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.createTransaction(java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.servlet.mvc.support.RedirectAttributes); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.createTransaction(java.lang.String,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.servlet.mvc.support.RedirectAttributes); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0 
+    where
+        bz1_0.account_number=?
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        bankz.bankz_transactions
+        (account_id, amount, balance_after, balance_before, bankx_response, created_at, description, fee, reference, sent_to_bankx, status, transaction_id, transaction_type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    update
+        bankz.bankz_accounts 
+    set
+        account_number=?,
+        account_type=?,
+        balance=?,
+        created_at=?,
+        customer_id=?,
+        updated_at=? 
+    where
+        id=?
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0 
+    where
+        bz1_0.id=?
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] INFO  c.b.service.BankXIntegrationService - Sending transaction to Bank X: BZ-TXN-7443D4845BC4
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:9090/api/bankz/transaction
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - Writing [com.bankz.dto.BankXTransactionRequest@2336d11f] as "application/json"
+2025-07-15 12:20:18 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.client.RestTemplate - Response 400 BAD_REQUEST
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-7] ERROR c.b.service.BankXIntegrationService - Error sending transaction to Bank X: 400 : "{"success":false,"message":"Validation failed","data":{"accountNumber":"Account number is required"},"timestamp":"2025-07-15T12:20:18.995565192"}"
+org.springframework.web.client.HttpClientErrorException$BadRequest: 400 : "{"success":false,"message":"Validation failed","data":{"accountNumber":"Account number is required"},"timestamp":"2025-07-15T12:20:18.995565192"}"
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:103)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:183)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:137)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:932)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:881)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:781)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:663)
+	at com.bankz.service.BankXIntegrationService.sendTransactionToBankX(BankXIntegrationService.java:55)
+	at com.bankz.controller.BankZOperatorController.createTransaction(BankZOperatorController.java:261)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.bankz.controller.BankZOperatorController$$SpringCGLIB$$0.createTransaction(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:151)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:129)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/transactions
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/transactions
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/transactions", parameters={}
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#transactions(Model, String, String, String, String, String)
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+DEBUG: Found 5 customers
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0
+DEBUG: AccountService.getAllAccounts() found 10 accounts
+DEBUG: Account BZ-ACC-003 belongs to Jane
+DEBUG: Account BZ-ACC-004 belongs to Jane
+DEBUG: Account BZ-ACC-005 belongs to Bob
+DEBUG: Account BZ-ACC-006 belongs to Bob
+DEBUG: Account BZ-ACC-001 belongs to John
+DEBUG: Account BZ-ACC-007 belongs to Lerato
+DEBUG: Account BZ-ACC-008 belongs to Lerato
+DEBUG: Account BZ-ACC-009 belongs to Mandla
+DEBUG: Account BZ-ACC-002 belongs to John
+DEBUG: Account BZ-ACC-010 belongs to Mandla
+DEBUG: Found 10 accounts
+DEBUG: Account BZ-ACC-003 - Jane Smith
+DEBUG: Account BZ-ACC-004 - Jane Smith
+DEBUG: Account BZ-ACC-005 - Bob Johnson
+DEBUG: Account BZ-ACC-006 - Bob Johnson
+DEBUG: Account BZ-ACC-001 - John Doe
+DEBUG: Account BZ-ACC-007 - Lerato Mokoena
+DEBUG: Account BZ-ACC-008 - Lerato Mokoena
+DEBUG: Account BZ-ACC-009 - Mandla van der Merwe
+DEBUG: Account BZ-ACC-002 - John Doe
+DEBUG: Account BZ-ACC-010 - Mandla van der Merwe
+DEBUG: Added 10 accounts to model
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:20:19 [http-nio-0.0.0.0-9091-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/api-logs
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/api-logs
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/api-logs", parameters={}
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#apiLogs(Model)
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.apiLogs(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.apiLogs(org.springframework.ui.Model); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:20:26 [http-nio-0.0.0.0-9091-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /operator/transactions
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=5E757DE4C34BE7904FD636A43A31B8D5], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /operator/transactions
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/operator/transactions", parameters={}
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bankz.controller.BankZOperatorController#transactions(Model, String, String, String, String, String)
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public java.lang.String com.bankz.controller.BankZOperatorController.transactions(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String); target is of class [com.bankz.controller.BankZOperatorController]
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.address,
+        bz1_0.created_at,
+        bz1_0.email,
+        bz1_0.first_name,
+        bz1_0.id_number,
+        bz1_0.last_name,
+        bz1_0.phone_number 
+    from
+        bankz.bankz_customers bz1_0
+DEBUG: Found 5 customers
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_number,
+        bz1_0.account_type,
+        bz1_0.balance,
+        bz1_0.created_at,
+        bz1_0.customer_id,
+        bz1_0.updated_at 
+    from
+        bankz.bankz_accounts bz1_0
+DEBUG: AccountService.getAllAccounts() found 10 accounts
+DEBUG: Account BZ-ACC-003 belongs to Jane
+DEBUG: Account BZ-ACC-004 belongs to Jane
+DEBUG: Account BZ-ACC-005 belongs to Bob
+DEBUG: Account BZ-ACC-006 belongs to Bob
+DEBUG: Account BZ-ACC-001 belongs to John
+DEBUG: Account BZ-ACC-007 belongs to Lerato
+DEBUG: Account BZ-ACC-008 belongs to Lerato
+DEBUG: Account BZ-ACC-009 belongs to Mandla
+DEBUG: Account BZ-ACC-002 belongs to John
+DEBUG: Account BZ-ACC-010 belongs to Mandla
+DEBUG: Found 10 accounts
+DEBUG: Account BZ-ACC-003 - Jane Smith
+DEBUG: Account BZ-ACC-004 - Jane Smith
+DEBUG: Account BZ-ACC-005 - Bob Johnson
+DEBUG: Account BZ-ACC-006 - Bob Johnson
+DEBUG: Account BZ-ACC-001 - John Doe
+DEBUG: Account BZ-ACC-007 - Lerato Mokoena
+DEBUG: Account BZ-ACC-008 - Lerato Mokoena
+DEBUG: Account BZ-ACC-009 - Mandla van der Merwe
+DEBUG: Account BZ-ACC-002 - John Doe
+DEBUG: Account BZ-ACC-010 - Mandla van der Merwe
+DEBUG: Added 10 accounts to model
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bz1_0.id,
+        bz1_0.account_id,
+        bz1_0.amount,
+        bz1_0.balance_after,
+        bz1_0.balance_before,
+        bz1_0.bankx_response,
+        bz1_0.created_at,
+        bz1_0.description,
+        bz1_0.fee,
+        bz1_0.reference,
+        bz1_0.sent_to_bankx,
+        bz1_0.status,
+        bz1_0.transaction_id,
+        bz1_0.transaction_type 
+    from
+        bankz.bankz_transactions bz1_0
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-07-15 12:21:39 [http-nio-0.0.0.0-9091-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

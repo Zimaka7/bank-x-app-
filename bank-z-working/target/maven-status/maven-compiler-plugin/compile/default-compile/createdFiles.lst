@@ -1,0 +1,4 @@
+com/bankz/repository/BankZUserRepository.class
+com/bankz/service/UserDetailsServiceImpl.class
+com/bankz/entity/BankZUser$UserRole.class
+com/bankz/entity/BankZUser.class

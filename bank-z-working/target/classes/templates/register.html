@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Bank Z</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card" style="max-width: 500px;">
+            <div class="auth-logo">
+                <h1>🏦 Bank Z</h1>
+                <p style="color: var(--absa-dark-gray); margin-top: 0.5rem;">Join Our Banking Network</p>
+            </div>
+            
+            <form th:action="@{/register}" method="post" th:object="${user}">
+                <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" id="firstName" th:field="*{firstName}" class="form-control" required>
+                        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="alert alert-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" id="lastName" th:field="*{lastName}" class="form-control" required>
+                        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="alert alert-error"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" th:field="*{username}" class="form-control" required>
+                    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" th:field="*{email}" class="form-control" required>
+                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="saIdNumber" class="form-label">South African ID Number (Optional)</label>
+                    <input type="text" id="saIdNumber" th:field="*{saIdNumber}" class="form-control" 
+                           placeholder="e.g., 9001015009087" maxlength="13" pattern="[0-9]{13}"
+                           title="Must be exactly 13 digits">
+                    <small class="form-text">Enter your 13-digit South African ID number (optional but recommended for verification)</small>
+                    <div th:if="${#fields.hasErrors('saIdNumber')}" th:errors="*{saIdNumber}" class="alert alert-error"></div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" th:field="*{password}" class="form-control" required>
+                        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="role" class="form-label">Role</label>
+                    <select id="role" th:field="*{role}" class="form-control" required>
+                        <option value="">Select Role</option>
+                        <option value="OPERATOR">Operator</option>
+                        <option value="AUDITOR">Auditor</option>
+                    </select>
+                    <small class="form-text">Select your role in the Bank Z system</small>
+                    <div th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="alert alert-error"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">
+                    Create Account
+                </button>
+                
+                <div style="text-align: center;">
+                    <p>Already have an account? <a th:href="@{/login}" style="color: var(--absa-red);">Login here</a></p>
+                    <p><a th:href="@{/}" style="color: var(--absa-blue);">← Back to Home</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

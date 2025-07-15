@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Logs & Monitoring - Bank Z Operator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/operator/dashboard">
+                <i class="fas fa-university me-2"></i>Bank Z - Operator Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-1"></i>Operator
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/transactions">
+                                <i class="fas fa-exchange-alt me-2"></i>Transaction Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/batch-upload">
+                                <i class="fas fa-upload me-2"></i>Batch Upload
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/reconciliation">
+                                <i class="fas fa-balance-scale me-2"></i>Reconciliation
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/operator/api-logs">
+                                <i class="fas fa-list-alt me-2"></i>API Logs & Monitoring
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/admin">
+                                <i class="fas fa-cogs me-2"></i>Admin Panel
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">API Logs & Monitoring</h1>
+                </div>
+
+                <!-- API Status Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${apiStatus}">ONLINE</h4>
+                                        <p class="card-text">API Status</p>
+                                    </div>
+                                    <i class="fas fa-server fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-info">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${responseTime}">120ms</h4>
+                                        <p class="card-text">Avg Response Time</p>
+                                    </div>
+                                    <i class="fas fa-clock fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${successRate}">99.8%</h4>
+                                        <p class="card-text">Success Rate</p>
+                                    </div>
+                                    <i class="fas fa-check-circle fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-warning">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${errorCount}">2</h4>
+                                        <p class="card-text">Errors (24h)</p>
+                                    </div>
+                                    <i class="fas fa-exclamation-triangle fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Logs Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Recent API Calls</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Method</th>
+                                        <th>Endpoint</th>
+                                        <th>Status</th>
+                                        <th>Response Time</th>
+                                        <th>Request ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="log : ${apiLogs}">
+                                        <td th:text="${#temporals.format(log.timestamp, 'yyyy-MM-dd HH:mm:ss')}">2025-07-13 21:30:00</td>
+                                        <td>
+                                            <span class="badge" 
+                                                  th:classappend="${log.method == 'POST'} ? 'bg-primary' : (${log.method == 'GET'} ? 'bg-success' : 'bg-secondary')"
+                                                  th:text="${log.method}">POST</span>
+                                        </td>
+                                        <td th:text="${log.endpoint}">/api/transactions</td>
+                                        <td>
+                                            <span class="badge" 
+                                                  th:classappend="${log.status == '200'} ? 'bg-success' : (${log.status == '401'} ? 'bg-warning' : 'bg-danger')"
+                                                  th:text="${log.status}">200</span>
+                                        </td>
+                                        <td th:text="${log.responseTime}">120ms</td>
+                                        <td th:text="${log.requestId}">REQ001</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

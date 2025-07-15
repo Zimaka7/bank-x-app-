@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bank Z Operator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/operator/dashboard">
+                <i class="fas fa-university me-2"></i>Bank Z - Operator Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-1"></i>Operator
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/operator/dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/transactions">
+                                <i class="fas fa-exchange-alt me-2"></i>Transaction Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/batch-upload">
+                                <i class="fas fa-upload me-2"></i>Batch Upload
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/reconciliation">
+                                <i class="fas fa-balance-scale me-2"></i>Reconciliation
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/api-logs">
+                                <i class="fas fa-list-alt me-2"></i>API Logs & Monitoring
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/operator/admin">
+                                <i class="fas fa-cogs me-2"></i>Admin Panel
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${totalCustomers}">25</h4>
+                                        <p class="card-text">Total Customers</p>
+                                    </div>
+                                    <i class="fas fa-users fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${totalAccounts}">45</h4>
+                                        <p class="card-text">Total Accounts</p>
+                                    </div>
+                                    <i class="fas fa-piggy-bank fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-info">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${todayTransactions}">127</h4>
+                                        <p class="card-text">Today's Transactions</p>
+                                    </div>
+                                    <i class="fas fa-exchange-alt fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-warning">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 th:text="${systemStatus}">OPERATIONAL</h4>
+                                        <p class="card-text">System Status</p>
+                                    </div>
+                                    <i class="fas fa-server fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h3>Quick Actions</h3>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="/operator/transactions" class="btn btn-primary w-100 mb-2">
+                                    <i class="fas fa-plus me-2"></i>Create Transaction
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/operator/batch-upload" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-upload me-2"></i>Batch Upload
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/operator/reconciliation" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-balance-scale me-2"></i>Reconciliation
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/operator/api-logs" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-list-alt me-2"></i>View API Logs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transaction Summary -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Transaction Summary</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row text-center">
+                                    <div class="col-4">
+                                        <h4 class="text-success" th:text="${successfulTransactions}">124</h4>
+                                        <small>Successful</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <h4 class="text-danger" th:text="${failedTransactions}">3</h4>
+                                        <small>Failed</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <h4 class="text-warning" th:text="${pendingTransactions}">0</h4>
+                                        <small>Pending</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>System Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Bank X API:</span>
+                                    <span class="badge bg-success" th:text="${bankXStatus}">ACTIVE</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Last Reconciliation:</span>
+                                    <span th:text="${#temporals.format(lastReconciliation, 'yyyy-MM-dd HH:mm')}">2025-07-13 19:00</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>System:</span>
+                                    <span class="badge bg-success" th:text="${systemStatus}">OPERATIONAL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
