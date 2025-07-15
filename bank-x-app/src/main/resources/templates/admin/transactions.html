@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Bank X Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .admin-nav {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .admin-nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background: #d32f2f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .admin-nav a:hover {
+            background: #b71c1c;
+        }
+        
+        .admin-nav a.active {
+            background: #b71c1c;
+        }
+        
+        .transactions-table {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        .amount-credit {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .amount-debit {
+            color: #f44336;
+            font-weight: bold;
+        }
+        
+        .amount-transfer {
+            color: #ff9800;
+            font-weight: bold;
+        }
+        
+        .transaction-type {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .type-credit {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+        
+        .type-debit {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .type-transfer {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Bank X - Transaction Management</h1>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <a th:href="@{/logout}" class="logout-btn">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="admin-nav">
+            <a th:href="@{/admin/dashboard}">Dashboard</a>
+            <a th:href="@{/admin/customers}">Customers</a>
+            <a th:href="@{/admin/accounts}">Accounts</a>
+            <a th:href="@{/admin/transactions}" class="active">Transactions</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="transactions-table">
+                <h2>All Transactions</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Account</th>
+                            <th>Customer</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="transaction : ${transactions}">
+                            <td th:text="${transaction.transactionId}">TXN001</td>
+                            <td th:text="${transaction.account.accountNumber}">ACC001</td>
+                            <td th:text="${transaction.account.customer.firstName + ' ' + transaction.account.customer.lastName}">John Doe</td>
+                            <td>
+                                <span th:class="'transaction-type type-' + ${transaction.transactionType.name().toLowerCase()}"
+                                      th:text="${transaction.transactionType}">CREDIT</span>
+                            </td>
+                            <td>
+                                <span th:class="'amount-' + ${transaction.transactionType.name().toLowerCase()}"
+                                      th:text="'R' + ${#numbers.formatDecimal(transaction.amount, 1, 2)}">R100.00</span>
+                            </td>
+                            <td th:text="${transaction.description}">Description</td>
+                            <td th:text="${#temporals.format(transaction.createdAt, 'yyyy-MM-dd HH:mm')}">2023-01-01 12:00</td>
+                            <td th:text="${transaction.status}">COMPLETED</td>
+                        </tr>
+                        <tr th:if="${#lists.isEmpty(transactions)}">
+                            <td colspan="8" style="text-align: center; color: #666;">No transactions found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

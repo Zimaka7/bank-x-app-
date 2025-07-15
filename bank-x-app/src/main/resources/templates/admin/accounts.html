@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts - Bank X Admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .admin-nav {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .admin-nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background: #d32f2f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .admin-nav a:hover {
+            background: #b71c1c;
+        }
+        
+        .admin-nav a.active {
+            background: #b71c1c;
+        }
+        
+        .accounts-table {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        .account-type-current {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .account-type-savings {
+            background: #e8f5e8;
+            color: #388e3c;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .balance {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Bank X - Account Management</h1>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <a th:href="@{/logout}" class="logout-btn">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="admin-nav">
+            <a th:href="@{/admin/dashboard}">Dashboard</a>
+            <a th:href="@{/admin/customers}">Customers</a>
+            <a th:href="@{/admin/accounts}" class="active">Accounts</a>
+            <a th:href="@{/admin/transactions}">Transactions</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="accounts-table">
+                <h2>All Accounts</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Account Number</th>
+                            <th>Customer</th>
+                            <th>Type</th>
+                            <th>Balance</th>
+                            <th>Created Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="account : ${accounts}">
+                            <td th:text="${account.accountNumber}">ACC001</td>
+                            <td th:text="${account.customer.firstName + ' ' + account.customer.lastName}">John Doe</td>
+                            <td>
+                                <span th:class="${account.accountType.name() == 'CURRENT'} ? 'account-type-current' : 'account-type-savings'"
+                                      th:text="${account.accountType.displayName}">Current</span>
+                            </td>
+                            <td class="balance" th:text="'R' + ${#numbers.formatDecimal(account.balance, 1, 2)}">R1000.00</td>
+                            <td th:text="${#temporals.format(account.createdAt, 'yyyy-MM-dd')}">2023-01-01</td>
+                        </tr>
+                        <tr th:if="${#lists.isEmpty(accounts)}">
+                            <td colspan="5" style="text-align: center; color: #666;">No accounts found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

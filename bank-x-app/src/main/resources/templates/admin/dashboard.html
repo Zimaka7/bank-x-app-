@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bank X</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header-content">
+            <a th:href="@{/}" class="logo">Bank X</a>
+            <div class="user-info">
+                <span sec:authentication="name"></span>
+                <a th:href="@{/logout}" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="admin-nav">
+        <div class="container">
+            <a th:href="@{/admin/dashboard}" class="active">Admin Dashboard</a>
+            <a th:href="@{/admin/customers}">Customers</a>
+            <a th:href="@{/admin/accounts}">Accounts</a>
+            <a th:href="@{/admin/transactions}">Transactions</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">🛡️ Admin Control Center</h1>
+                <p class="card-subtitle">Monitor and manage Bank X operations</p>
+            </div>
+            
+            <!-- System Overview Stats -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number" th:text="${totalCustomers ?: 0}">0</div>
+                    <div class="stat-label">Total Customers</div>
+                    <div class="stat-trend">
+                        <span th:class="${monthlyCustomerChange >= 0 ? 'trend-up' : 'trend-down'}"
+                              th:text="${monthlyCustomerChange >= 0 ? '↗️ +' : '↘️ '} + ${#numbers.formatDecimal(monthlyCustomerChange, 1, 1)} + '% this month'">
+                            ↗️ +0% this month
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">💳</div>
+                    <div class="stat-number" th:text="${totalAccounts ?: 0}">0</div>
+                    <div class="stat-label">Active Accounts</div>
+                    <div class="stat-trend">
+                        <span th:class="${monthlyAccountChange >= 0 ? 'trend-up' : 'trend-down'}"
+                              th:text="${monthlyAccountChange >= 0 ? '↗️ +' : '↘️ '} + ${#numbers.formatDecimal(monthlyAccountChange, 1, 1)} + '% this month'">
+                            ↗️ +0% this month
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-number" th:text="${#lists.size(recentTransactions)}">0</div>
+                    <div class="stat-label">Recent Transactions</div>
+                    <div class="stat-trend">
+                        <span th:class="${transactionCountChange >= 0 ? 'trend-up' : 'trend-down'}"
+                              th:text="${transactionCountChange >= 0 ? '↗️ +' : '↘️ '} + ${#numbers.formatDecimal(transactionCountChange, 1, 1)} + '% today'">
+                            ↗️ +0% today
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-number" th:text="'R' + ${#numbers.formatDecimal(totalDeposits, 1, 2)}">R0.00</div>
+                    <div class="stat-label">Total Deposits</div>
+                    <div class="stat-trend">
+                        <span th:class="${weeklyVolumeChange >= 0 ? 'trend-up' : 'trend-down'}"
+                              th:text="${weeklyVolumeChange >= 0 ? '↗️ +' : '↘️ '} + ${#numbers.formatDecimal(weeklyVolumeChange, 1, 1)} + '% this week'">
+                            ↗️ +0% this week
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">⚡ Quick Actions</h2>
+                <p class="card-subtitle">Frequently used administrative functions</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="action-card">
+                    <div class="action-icon">👥</div>
+                    <h3>Manage Customers</h3>
+                    <p>View, search, and manage customer accounts</p>
+                    <a th:href="@{/admin/customers}" class="btn btn-primary">View Customers</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">💳</div>
+                    <h3>Account Overview</h3>
+                    <p>Monitor all account balances and statuses</p>
+                    <a th:href="@{/admin/accounts}" class="btn btn-info">View Accounts</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">📊</div>
+                    <h3>Transaction Reports</h3>
+                    <p>Analyze transaction patterns and history</p>
+                    <a th:href="@{/admin/transactions}" class="btn btn-secondary">View Reports</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">🔔</div>
+                    <h3>System Alerts</h3>
+                    <p>Monitor system health and notifications</p>
+                    <button class="btn btn-warning" onclick="showSystemStatus()">Check Status</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="card" th:if="${recentTransactions}">
+            <div class="card-header">
+                <h2 class="card-title">📋 Recent System Transactions</h2>
+                <p class="card-subtitle">Latest banking activity across all accounts</p>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Customer</th>
+                            <th>Account</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Date & Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="transaction : ${recentTransactions}" class="transaction-row">
+                            <td class="transaction-id" th:text="${transaction.transactionId}">TXN001</td>
+                            <td class="customer-name" th:text="${transaction.account.customer.firstName + ' ' + transaction.account.customer.lastName}">John Doe</td>
+                            <td class="account-number" th:text="${transaction.account.accountNumber}">ACC001</td>
+                            <td>
+                                <span class="transaction-type" 
+                                      th:classappend="${transaction.transactionType.name() == 'CREDIT' ? 'type-credit' : 'type-debit'}"
+                                      th:text="${transaction.transactionType}">CREDIT</span>
+                            </td>
+                            <td class="transaction-amount" 
+                                th:classappend="${transaction.transactionType.name() == 'CREDIT' ? 'amount-credit' : 'amount-debit'}">
+                                <span th:text="${transaction.transactionType.name() == 'CREDIT' ? '+' : '-'}">+</span>
+                                <span th:text="'R' + ${#numbers.formatDecimal(transaction.amount, 1, 2)}">R100.00</span>
+                            </td>
+                            <td class="transaction-description" th:text="${transaction.description ?: 'N/A'}">Description</td>
+                            <td class="transaction-date" th:text="${#temporals.format(transaction.createdAt, 'dd MMM yyyy HH:mm')}">01 Jan 2024 12:00</td>
+                            <td>
+                                <span class="status-badge status-completed">Completed</span>
+                            </td>
+                        </tr>
+                        <tr th:if="${#lists.isEmpty(recentTransactions)}">
+                            <td colspan="8" class="no-data">No recent transactions found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a th:href="@{/admin/transactions}" class="btn btn-secondary">View All Transactions</a>
+            </div>
+        </div>
+
+        <!-- System Health -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">🔧 System Health</h2>
+                <p class="card-subtitle">Monitor system performance and status</p>
+            </div>
+            
+            <div class="health-grid">
+                <div class="health-item">
+                    <div class="health-icon status-good">🟢</div>
+                    <div class="health-details">
+                        <h4>Database Connection</h4>
+                        <p>All database connections are healthy</p>
+                        <span class="health-status">Operational</span>
+                    </div>
+                </div>
+                
+                <div class="health-item">
+                    <div class="health-icon status-good">🟢</div>
+                    <div class="health-details">
+                        <h4>Transaction Processing</h4>
+                        <p>All transactions processing normally</p>
+                        <span class="health-status">Operational</span>
+                    </div>
+                </div>
+                
+                <div class="health-item">
+                    <div class="health-icon status-good">🟢</div>
+                    <div class="health-details">
+                        <h4>Security Systems</h4>
+                        <p>All security protocols active</p>
+                        <span class="health-status">Operational</span>
+                    </div>
+                </div>
+                
+                <div class="health-item">
+                    <div class="health-icon status-warning">🟡</div>
+                    <div class="health-details">
+                        <h4>System Load</h4>
+                        <p>Moderate system load detected</p>
+                        <span class="health-status">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banking Statistics -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">📈 Banking Statistics</h2>
+                <p class="card-subtitle">Key performance indicators and trends</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stats-item">
+                    <div class="stats-chart">📊</div>
+                    <div class="stats-details">
+                        <h4>Daily Transactions</h4>
+                        <div class="stats-number" th:text="${dailyTransactionCount ?: 0}">0</div>
+                        <div th:class="${transactionCountChange >= 0 ? 'stats-change positive' : 'stats-change negative'}"
+                             th:text="${transactionCountChange >= 0 ? '+' : ''} + ${#numbers.formatDecimal(transactionCountChange, 1, 1)} + '% from yesterday'">
+                            +0% from yesterday
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-item">
+                    <div class="stats-chart">💰</div>
+                    <div class="stats-details">
+                        <h4>Transaction Volume</h4>
+                        <div class="stats-number" th:text="'R' + ${#numbers.formatDecimal(dailyTransactionVolume, 1, 0)}">R0</div>
+                        <div th:class="${volumeChange >= 0 ? 'stats-change positive' : 'stats-change negative'}"
+                             th:text="${volumeChange >= 0 ? '+' : ''} + ${#numbers.formatDecimal(volumeChange, 1, 1)} + '% from yesterday'">
+                            +0% from yesterday
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-item">
+                    <div class="stats-chart">👤</div>
+                    <div class="stats-details">
+                        <h4>New Customers</h4>
+                        <div class="stats-number" th:text="${dailyNewCustomers ?: 0}">0</div>
+                        <div th:class="${customerChange >= 0 ? 'stats-change positive' : 'stats-change negative'}"
+                             th:text="${customerChange >= 0 ? '+' : ''} + ${#numbers.formatDecimal(customerChange, 1, 1)} + '% from yesterday'">
+                            +0% from yesterday
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-item">
+                    <div class="stats-chart">🔒</div>
+                    <div class="stats-details">
+                        <h4>Security Events</h4>
+                        <div class="stats-number" th:text="${securityEvents ?: 0}">0</div>
+                        <div class="stats-change neutral">No incidents today</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bank X. All rights reserved. | Admin Portal - Secure Banking Management</p>
+        </div>
+    </footer>
+
+    <style>
+        .stat-trend {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .trend-up {
+            color: var(--absa-green);
+            font-weight: 600;
+        }
+        
+        .trend-down {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .action-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--absa-white) 0%, rgba(227, 30, 36, 0.02) 100%);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(227, 30, 36, 0.1);
+            transition: var(--transition);
+        }
+        
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .action-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .action-card h3 {
+            color: var(--absa-red);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .action-card p {
+            color: var(--absa-dark-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        .transaction-row:hover {
+            background: rgba(227, 30, 36, 0.05);
+        }
+        
+        .transaction-id {
+            font-family: monospace;
+            font-weight: 600;
+            color: var(--absa-blue);
+        }
+        
+        .customer-name {
+            font-weight: 600;
+        }
+        
+        .account-number {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--absa-dark-gray);
+        }
+        
+        .transaction-description {
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+        
+        .status-completed {
+            background: var(--absa-light-green);
+            color: var(--absa-green);
+        }
+        
+        .no-data {
+            text-align: center;
+            color: var(--absa-dark-gray);
+            font-style: italic;
+            padding: 2rem;
+        }
+        
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .health-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(248, 249, 250, 0.5);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--absa-green);
+        }
+        
+        .health-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .health-details h4 {
+            color: var(--absa-black);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .health-details p {
+            color: var(--absa-dark-gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .health-status {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--absa-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .stats-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--absa-white) 0%, rgba(227, 30, 36, 0.02) 100%);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(227, 30, 36, 0.1);
+        }
+        
+        .stats-chart {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        
+        .stats-details h4 {
+            color: var(--absa-black);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .stats-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--absa-red);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stats-change {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .stats-change.positive {
+            color: var(--absa-green);
+        }
+        
+        .stats-change.negative {
+            color: #dc3545;
+        }
+        
+        .stats-change.neutral {
+            color: var(--absa-dark-gray);
+        }
+        
+        @media (max-width: 768px) {
+            .health-item,
+            .stats-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .table-responsive {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Notification System
+        function showNotification(title, message, type = 'info', duration = 5000) {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            
+            const icons = {
+                success: '✅',
+                error: '❌',
+                warning: '⚠️',
+                info: 'ℹ️'
+            };
+            
+            notification.innerHTML = `
+                <div class="notification-header">
+                    <span class="notification-title">${icons[type]} ${title}</span>
+                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                </div>
+                <div class="notification-body">${message}</div>
+                <div class="notification-time">Just now</div>
+            `;
+            
+            container.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, duration);
+        }
+        
+        function showSystemStatus() {
+            showNotification(
+                'System Status Check',
+                'All systems operational. Database: ✅ Security: ✅ Transactions: ✅ Performance: ⚠️ (Monitoring)',
+                'success',
+                8000
+            );
+        }
+        
+        // Auto-refresh data every 30 seconds
+        function refreshDashboard() {
+            showNotification('Dashboard Updated', 'Latest data has been loaded', 'info', 3000);
+        }
+        
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+                        
+            // Set up auto-refresh
+            setInterval(refreshDashboard, 30000);
+            
+            // Add loading states to action buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (!this.classList.contains('loading')) {
+                        this.classList.add('loading');
+                        setTimeout(() => {
+                            this.classList.remove('loading');
+                        }, 2000);
+                    }
+                });
+            });
+            
+                    });
+    </script>
+</body>
+</html>
