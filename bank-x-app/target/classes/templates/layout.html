@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} ?: 'Bank X - Digital Banking'">Bank X</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a th:href="@{/}" class="logo">🏦 Bank X</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/login}">Login</a>
+                    </li>
+                    <li sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/register}">Register</a>
+                    </li>
+                    <li sec:authorize="hasRole('ADMIN')">
+                        <a th:href="@{/admin/dashboard}">Admin Dashboard</a>
+                    </li>
+                    <li sec:authorize="hasRole('CUSTOMER')">
+                        <a th:href="@{/customer/dashboard}">My Dashboard</a>
+                    </li>
+                    <li sec:authorize="hasRole('CUSTOMER')">
+                        <a th:href="@{/customer/accounts}">My Accounts</a>
+                    </li>
+                    <li sec:authorize="hasRole('CUSTOMER')">
+                        <a th:href="@{/customer/transfer}">Transfer</a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <span sec:authentication="name" style="margin-right: 1rem;"></span>
+                        <a th:href="@{/logout}">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Flash Messages -->
+        <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+        
+        <!-- Page Content -->
+        <div th:replace="${content}"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bank X. All rights reserved. | Secure Digital Banking</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/app.js}"></script>
+</body>
+</html>

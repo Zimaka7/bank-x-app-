@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money - Bank X</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a th:href="@{/}" class="logo">🏦 Bank X</a>
+                <div class="user-info">
+                    <span sec:authentication="name"></span>
+                    <a th:href="@{/logout}" class="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="admin-nav">
+        <div class="container">
+            <a th:href="@{/customer/dashboard}">Dashboard</a>
+            <a th:href="@{/customer/accounts}">My Accounts</a>
+            <a th:href="@{/customer/transfer}" class="active">Transfer</a>
+            <a th:href="@{/customer/transactions}">Transactions</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="transfer-container">
+                <div class="transfer-form-card">
+                    <div class="card-header">
+                        <h1 class="card-title">💸 Transfer Money</h1>
+                        <p>Transfer funds between your accounts instantly</p>
+                    </div>
+                    
+                    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+                    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+                    
+                    <form th:action="@{/customer/transfer}" method="post" class="transfer-form">
+                        <div class="form-group">
+                            <label for="fromAccount" class="form-label">From Account</label>
+                            <select id="fromAccount" name="fromAccount" class="form-control" required>
+                                <option value="">Select source account</option>
+                                <option th:each="account : ${accounts}" 
+                                        th:value="${account.accountNumber}" 
+                                        th:text="${account.accountType.name() == 'CURRENT' ? 'Current Account' : 'Savings Account'} + ' - ' + ${account.accountNumber} + ' (R' + ${#numbers.formatDecimal(account.balance, 1, 2)} + ')'">
+                                    Account
+                                </option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="toAccount" class="form-label">To Account</label>
+                            <select id="toAccount" name="toAccount" class="form-control" required>
+                                <option value="">Select destination account</option>
+                                <option th:each="account : ${accounts}" 
+                                        th:value="${account.accountNumber}" 
+                                        th:text="${account.accountType.name() == 'CURRENT' ? 'Current Account' : 'Savings Account'} + ' - ' + ${account.accountNumber} + ' (R' + ${#numbers.formatDecimal(account.balance, 1, 2)} + ')'">
+                                    Account
+                                </option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="amount" class="form-label">Amount (R)</label>
+                            <input type="number" id="amount" name="amount" class="form-control" 
+                                   step="0.01" min="0.01" placeholder="0.00" required>
+                            <small class="form-help">Minimum transfer amount: R0.01</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description (Optional)</label>
+                            <input type="text" id="description" name="description" class="form-control" 
+                                   placeholder="e.g., Monthly savings, Emergency fund" maxlength="100">
+                        </div>
+                        
+                        <div class="transfer-summary" id="transferSummary" style="display: none;">
+                            <h4>Transfer Summary</h4>
+                            <div class="summary-row">
+                                <span>From:</span>
+                                <span id="summaryFrom">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>To:</span>
+                                <span id="summaryTo">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Amount:</span>
+                                <span id="summaryAmount">R0.00</span>
+                            </div>
+                            <div class="summary-row fee-info">
+                                <span>Transaction Fee:</span>
+                                <span id="summaryFee">R0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total Debit:</span>
+                                <span id="summaryTotal">R0.00</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary transfer-btn">
+                            🚀 Transfer Now
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="accounts-overview">
+                    <h3>Your Accounts</h3>
+                    <div class="account-list">
+                        <div th:each="account : ${accounts}" class="account-item">
+                            <div class="account-info">
+                                <h4 th:text="${account.accountType.name() == 'CURRENT' ? 'Current Account' : 'Savings Account'}">Account Type</h4>
+                                <p class="account-number" th:text="${account.accountNumber}">ACC123456789</p>
+                            </div>
+                            <div class="account-balance">
+                                <span th:text="'R' + ${#numbers.formatDecimal(account.balance, 1, 2)}">R0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transfer-info">
+                        <h4>Transfer Information</h4>
+                        <ul>
+                            <li>✅ Instant transfers between your accounts</li>
+                            <li>💰 0.05% fee on debits from Current Account</li>
+                            <li>🎯 No fee on credits to Savings Account</li>
+                            <li>📱 Real-time balance updates</li>
+                            <li>🔒 Secure and encrypted transactions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bank X. All rights reserved. | Secure Digital Banking</p>
+        </div>
+    </footer>
+
+    <style>
+        .transfer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .transfer-form-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .transfer-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-help {
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+        
+        .transfer-summary {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .transfer-summary h4 {
+            margin: 0 0 1rem 0;
+            color: var(--absa-red);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-row.total {
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .fee-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .transfer-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        .accounts-overview {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .accounts-overview h3 {
+            margin: 0 0 1rem 0;
+            color: var(--absa-red);
+        }
+        
+        .account-list {
+            margin-bottom: 2rem;
+        }
+        
+        .account-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .account-info h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1rem;
+        }
+        
+        .account-number {
+            margin: 0;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .account-balance {
+            font-weight: bold;
+            color: var(--absa-red);
+            font-size: 1.1rem;
+        }
+        
+        .transfer-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+        
+        .transfer-info h4 {
+            margin: 0 0 1rem 0;
+            color: var(--absa-red);
+        }
+        
+        .transfer-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .transfer-info li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .transfer-info li:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            .transfer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script th:src="@{/js/bankx.js}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fromAccount = document.getElementById('fromAccount');
+            const toAccount = document.getElementById('toAccount');
+            const amount = document.getElementById('amount');
+            const transferSummary = document.getElementById('transferSummary');
+            
+            function updateSummary() {
+                const fromValue = fromAccount.value;
+                const toValue = toAccount.value;
+                const amountValue = parseFloat(amount.value) || 0;
+                
+                if (fromValue && toValue && amountValue > 0) {
+                    const fromText = fromAccount.options[fromAccount.selectedIndex].text;
+                    const toText = toAccount.options[toAccount.selectedIndex].text;
+                    
+                    // Calculate fee (0.05% on debits)
+                    const fee = amountValue * 0.0005;
+                    const total = amountValue + fee;
+                    
+                    document.getElementById('summaryFrom').textContent = fromText.split(' - ')[0];
+                    document.getElementById('summaryTo').textContent = toText.split(' - ')[0];
+                    document.getElementById('summaryAmount').textContent = 'R' + amountValue.toFixed(2);
+                    document.getElementById('summaryFee').textContent = 'R' + fee.toFixed(2);
+                    document.getElementById('summaryTotal').textContent = 'R' + total.toFixed(2);
+                    
+                    transferSummary.style.display = 'block';
+                    
+                    // Show transfer preview notification
+                    if (window.bankX && window.bankX.notifications) {
+                        bankX.notifications.transfer(
+                            'Transfer Preview',
+                            `Transfer R${amountValue.toFixed(2)} from ${fromText.split(' - ')[0]} to ${toText.split(' - ')[0]}`,
+                            4000
+                        );
+                    }
+                } else {
+                    transferSummary.style.display = 'none';
+                }
+            }
+            
+            fromAccount.addEventListener('change', updateSummary);
+            toAccount.addEventListener('change', updateSummary);
+            amount.addEventListener('input', updateSummary);
+            
+            // Prevent selecting same account for from and to
+            fromAccount.addEventListener('change', function() {
+                const selectedValue = this.value;
+                Array.from(toAccount.options).forEach(option => {
+                    option.disabled = option.value === selectedValue;
+                });
+            });
+            
+            toAccount.addEventListener('change', function() {
+                const selectedValue = this.value;
+                Array.from(fromAccount.options).forEach(option => {
+                    option.disabled = option.value === selectedValue;
+                });
+            });
+            
+            // Welcome notification for transfer page
+            setTimeout(() => {
+                if (window.bankX && window.bankX.notifications) {
+                    bankX.notifications.transfer(
+                        'Money Transfer',
+                        'Transfer funds between your accounts instantly. All transfers are secure and processed in real-time.',
+                        6000
+                    );
+                }
+            }, 1000);
+            
+            // Form submission handler
+            document.querySelector('.transfer-form').addEventListener('submit', function(e) {
+                if (window.bankX && window.bankX.notifications) {
+                    bankX.notifications.info(
+                        'Processing Transfer...',
+                        'Your transfer is being processed. Please wait for confirmation.',
+                        3000
+                    );
+                }
+            });
+        });
+    </script>
+</body>
+</html>

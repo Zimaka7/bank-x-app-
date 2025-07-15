@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Bank X</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header-content">
+            <a th:href="@{/}" class="logo">Bank X</a>
+            <div class="user-info">
+                <span sec:authentication="name"></span>
+                <a th:href="@{/logout}" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="admin-nav">
+        <div class="container">
+            <a th:href="@{/customer/dashboard}" class="active">My Dashboard</a>
+            <a th:href="@{/customer/accounts}">My Accounts</a>
+            <a th:href="@{/customer/transfer}">Transfer</a>
+            <a th:href="@{/customer/transactions}">Transactions</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        
+        <!-- Welcome Card -->
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Welcome back, <span th:text="${customer?.firstName ?: 'Valued Customer'}">Customer</span>! 👋</h1>
+                <p class="card-subtitle">Here's your banking overview for today</p>
+            </div>
+            
+            <!-- Account Overview Stats -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💳</div>
+                    <div class="stat-number" th:text="${accounts?.size() ?: 0}">0</div>
+                    <div class="stat-label">Active Accounts</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-number" th:text="${recentTransactions?.size() ?: 0}">0</div>
+                    <div class="stat-label">Recent Transactions</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🔒</div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Secure Banking</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-number">Instant</div>
+                    <div class="stat-label">Transfers</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Account Cards -->
+        <div class="card" th:if="${accounts}">
+            <div class="card-header">
+                <h2 class="card-title">💰 My Accounts</h2>
+                <p class="card-subtitle">Manage your accounts and view balances</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div th:each="account : ${accounts}" class="account-card">
+                    <div class="account-header">
+                        <div class="account-type" th:text="${account.accountType.name() == 'CURRENT' ? '💳 Current Account' : '💰 Savings Account'}">Account Type</div>
+                        <div class="account-status">
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="account-number" th:text="${account.accountNumber}">Account Number</div>
+                    
+                    <div class="account-balance-section">
+                        <div class="balance-label">Available Balance</div>
+                        <div class="account-balance">
+                            R<span th:text="${#numbers.formatDecimal(account.balance, 1, 2)}">0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="account-features" th:if="${account.accountType.name() == 'SAVINGS'}">
+                        <div class="feature-item">
+                            <span class="feature-icon">📈</span>
+                            <span>0.5% Interest Rate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="account-features" th:if="${account.accountType.name() == 'CURRENT'}">
+                        <div class="feature-item">
+                            <span class="feature-icon">💸</span>
+                            <span>Payment Enabled</span>
+                        </div>
+                    </div>
+                    
+                    <div class="account-actions">
+                        <a th:href="@{/customer/accounts}" class="btn btn-info btn-sm">View Details</a>
+                        <a th:href="@{/customer/transfer}" class="btn btn-primary btn-sm" th:if="${account.accountType.name() == 'CURRENT'}">Transfer</a>
+                        <a th:href="@{/customer/transfer}" class="btn btn-secondary btn-sm" th:if="${account.accountType.name() == 'SAVINGS'}">Transfer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Transactions -->
+        <div class="card" th:if="${recentTransactions}">
+            <div class="card-header">
+                <h2 class="card-title">📋 Recent Transactions</h2>
+                <p class="card-subtitle">Your latest account activity</p>
+            </div>
+            
+            <div class="transaction-list">
+                <div th:each="transaction : ${recentTransactions}" class="transaction-item">
+                    <div class="transaction-icon" th:classappend="${transaction.transactionType.name() == 'CREDIT' ? 'transaction-credit' : 'transaction-debit'}">
+                        <span th:text="${transaction.transactionType.name() == 'CREDIT' ? '💰' : '💸'}">💰</span>
+                    </div>
+                    
+                    <div class="transaction-details">
+                        <div class="transaction-description" th:text="${transaction.description ?: 'Bank Transaction'}">Description</div>
+                        <div class="transaction-date" th:text="${#temporals.format(transaction.createdAt, 'dd MMM yyyy, HH:mm')}">Date</div>
+                    </div>
+                    
+                    <div class="transaction-amount" th:classappend="${transaction.transactionType.name() == 'CREDIT' ? 'amount-credit' : 'amount-debit'}">
+                        <span th:text="${transaction.transactionType.name() == 'CREDIT' ? '+' : '-'}">+</span>
+                        <span th:text="'R' + ${#numbers.formatDecimal(transaction.amount, 1, 2)}">0.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a th:href="@{/customer/transactions}" class="btn btn-secondary">View All Transactions</a>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">⚡ Quick Actions</h2>
+                <p class="card-subtitle">Frequently used banking services</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="action-card">
+                    <div class="action-icon">💸</div>
+                    <h3>Transfer Money</h3>
+                    <p>Transfer funds between your accounts instantly</p>
+                    <a th:href="@{/customer/transfer}" class="btn btn-primary">Transfer Now</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">📊</div>
+                    <h3>View Statements</h3>
+                    <p>Check your complete transaction history</p>
+                    <a th:href="@{/customer/transactions}" class="btn btn-info">View Statements</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">💳</div>
+                    <h3>Account Details</h3>
+                    <p>Manage your account information and settings</p>
+                    <a th:href="@{/customer/accounts}" class="btn btn-secondary">Manage Accounts</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">🔔</div>
+                    <h3>Notifications</h3>
+                    <p>Stay updated with account alerts and news</p>
+                    <button class="btn btn-warning" onclick="showNotification('Welcome!', 'Thank you for banking with Bank X', 'success')">View Alerts</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Banking Tips -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">💡 Banking Tips</h2>
+                <p class="card-subtitle">Make the most of your Bank X experience</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <div class="tip-icon">💰</div>
+                    <div class="tip-content">
+                        <h4>Savings Account Interest</h4>
+                        <p>Earn 0.5% interest on all credits to your Savings account. Transfer funds to maximize your earnings!</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">🔒</div>
+                    <div class="tip-content">
+                        <h4>Security First</h4>
+                        <p>Always log out after your banking session and never share your login credentials with anyone.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon">📱</div>
+                    <div class="tip-content">
+                        <h4>24/7 Access</h4>
+                        <p>Bank anytime, anywhere with our secure online platform. Your accounts are always accessible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bank X. All rights reserved. | Secure Digital Banking Solutions</p>
+        </div>
+    </footer>
+
+    <style>
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-active {
+            background: var(--absa-light-green);
+            color: var(--absa-green);
+        }
+        
+        .account-balance-section {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .balance-label {
+            font-size: 0.9rem;
+            color: var(--absa-dark-gray);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .account-features {
+            margin: 1rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--absa-dark-gray);
+        }
+        
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+        
+        .account-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .transaction-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .transaction-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(248, 249, 250, 0.5);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .transaction-item:hover {
+            background: rgba(227, 30, 36, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .transaction-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .transaction-credit {
+            background: var(--absa-light-green);
+        }
+        
+        .transaction-debit {
+            background: #ffe6e6;
+        }
+        
+        .transaction-details {
+            flex: 1;
+        }
+        
+        .transaction-description {
+            font-weight: 600;
+            color: var(--absa-black);
+            margin-bottom: 0.25rem;
+        }
+        
+        .transaction-date {
+            font-size: 0.9rem;
+            color: var(--absa-dark-gray);
+        }
+        
+        .transaction-amount {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .action-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--absa-white) 0%, rgba(227, 30, 36, 0.02) 100%);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(227, 30, 36, 0.1);
+            transition: var(--transition);
+        }
+        
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .action-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .action-card h3 {
+            color: var(--absa-red);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .action-card p {
+            color: var(--absa-dark-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .tips-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .tip-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(248, 249, 250, 0.5);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--absa-red);
+        }
+        
+        .tip-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .tip-content h4 {
+            color: var(--absa-red);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .tip-content p {
+            color: var(--absa-dark-gray);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .account-actions {
+                flex-direction: column;
+            }
+            
+            .transaction-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .tip-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <script>
+        // Notification System
+        function showNotification(title, message, type = 'info', duration = 5000) {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            
+            const icons = {
+                success: '✅',
+                error: '❌',
+                warning: '⚠️',
+                info: 'ℹ️'
+            };
+            
+            notification.innerHTML = `
+                <div class="notification-header">
+                    <span class="notification-title">${icons[type]} ${title}</span>
+                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                </div>
+                <div class="notification-body">${message}</div>
+                <div class="notification-time">Just now</div>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Auto remove after duration
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, duration);
+        }
+        
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dashboard initialization without notifications
+        });
+        
+        // Add loading states to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (!this.classList.contains('loading')) {
+                    this.classList.add('loading');
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

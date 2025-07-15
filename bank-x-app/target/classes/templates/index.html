@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank X - Digital Banking Solutions</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a th:href="@{/}" class="logo">Bank X</a>
+            <nav sec:authorize="!isAuthenticated()">
+                <ul class="nav-menu">
+                    <li><a th:href="@{/register}" class="btn btn-primary">Open Account</a></li>
+                    <li><a th:href="@{/login}" class="btn btn-secondary">Login</a></li>
+                </ul>
+            </nav>
+            <div class="user-info" sec:authorize="isAuthenticated()">
+                <span sec:authentication="name"></span>
+                <a th:href="@{/logout}" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation for authenticated users only -->
+    <nav class="admin-nav" sec:authorize="isAuthenticated()" id="authenticatedNav">
+        <div class="container">
+            <a th:href="@{/admin/dashboard}" sec:authorize="hasRole('ADMIN')">Admin Dashboard</a>
+            <a th:href="@{/customer/dashboard}" sec:authorize="hasRole('CUSTOMER')">My Dashboard</a>
+            <a th:href="@{/customer/accounts}" sec:authorize="hasRole('CUSTOMER')">My Accounts</a>
+            <a th:href="@{/customer/transfer}" sec:authorize="hasRole('CUSTOMER')">Transfer</a>
+            <a th:href="@{/customer/transactions}" sec:authorize="hasRole('CUSTOMER')">Transactions</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Welcome to Bank X Digital Banking</h1>
+            </div>
+            
+            <div sec:authorize="!isAuthenticated()">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Experience secure and convenient banking with Bank X. Join thousands of satisfied customers 
+                    who trust us with their financial needs.
+                </p>
+                
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">R500</div>
+                        <div class="stat-label">Joining Bonus</div>
+                        <p style="margin-top: 1rem;">Get R500 credited to your Savings account when you register!</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number">0.5%</div>
+                        <div class="stat-label">Savings Interest</div>
+                        <p style="margin-top: 1rem;">Earn 0.5% interest on all credits to your Savings account.</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Digital Banking</div>
+                        <p style="margin-top: 1rem;">Access your accounts anytime, anywhere with our secure platform.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a th:href="@{/register}" class="btn btn-primary" style="margin-right: 1rem;">Open Account</a>
+                    <a th:href="@{/login}" class="btn btn-secondary">Login</a>
+                </div>
+            </div>
+            
+            <div sec:authorize="hasRole('CUSTOMER')">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Welcome back! Access your accounts and manage your finances securely.
+                </p>
+                <div style="text-align: center;">
+                    <a th:href="@{/customer/dashboard}" class="btn btn-primary">Go to Dashboard</a>
+                </div>
+            </div>
+            
+            <div sec:authorize="hasRole('ADMIN')">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Admin Portal - Manage customers, accounts, and monitor transactions.
+                </p>
+                <div style="text-align: center;">
+                    <a th:href="@{/admin/dashboard}" class="btn btn-primary">Go to Admin Dashboard</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Our Services</h2>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <h3 style="color: var(--absa-red); margin-bottom: 1rem;">Current Account</h3>
+                    <p>Perfect for daily transactions and payments. Make payments to other accounts with ease.</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 style="color: var(--absa-red); margin-bottom: 1rem;">Savings Account</h3>
+                    <p>Grow your money with 0.5% interest on all credits. Secure your financial future.</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 style="color: var(--absa-red); margin-bottom: 1rem;">Instant Transfers</h3>
+                    <p>Transfer money between your accounts instantly. Real-time balance updates.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bank X. All rights reserved. | Secure Digital Banking</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/bankx.js}"></script>
+    <script>
+        // Add welcome notifications for unauthenticated users only
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is authenticated by looking for user-info div
+            const userInfo = document.querySelector('.user-info');
+            
+            // Add welcome notifications for unauthenticated users only
+            if (!userInfo) {
+                setTimeout(() => {
+                    if (window.bankX && window.bankX.notifications) {
+                        bankX.notifications.info(
+                            'Welcome to Bank X!',
+                            'Experience secure digital banking with instant transfers, competitive interest rates, and 24/7 access.',
+                            8000,
+                            'home-welcome'
+                        );
+                        
+                        setTimeout(() => {
+                            bankX.notifications.money(
+                                'R500 Joining Bonus!',
+                                'Open a new account today and receive R500 credited to your Savings account instantly.',
+                                10000,
+                                'home-bonus'
+                            );
+                        }, 5000);
+                    }
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>

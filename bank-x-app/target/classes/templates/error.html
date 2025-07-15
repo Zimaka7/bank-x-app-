@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Error ' + ${statusCode} + ' - Bank X'">Error - Bank X</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a th:href="@{/}" class="logo">Bank X</a>
+            <div class="user-info">
+                <a th:href="@{/}" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="error-container">
+                <div class="error-card">
+                    <div class="error-icon">
+                        <span th:if="${statusCode == 404}">🔍</span>
+                        <span th:if="${statusCode == 403}">🔒</span>
+                        <span th:if="${statusCode == 500}">⚠️</span>
+                        <span th:unless="${statusCode == 404 or statusCode == 403 or statusCode == 500}">❌</span>
+                    </div>
+                    
+                    <h1 class="error-title" th:text="${errorTitle}">Error</h1>
+                    <p class="error-message" th:text="${errorMessage}">An error occurred</p>
+                    
+                    <div class="error-details" th:if="${statusCode}">
+                        <p><strong>Error Code:</strong> <span th:text="${statusCode}">500</span></p>
+                        <p th:if="${requestUri}"><strong>Requested URL:</strong> <span th:text="${requestUri}">/</span></p>
+                    </div>
+                    
+                    <div class="error-actions">
+                        <a th:href="@{/}" class="btn btn-primary">🏠 Go Home</a>
+                        <a th:href="@{/login}" class="btn btn-secondary" th:if="${statusCode == 403}">🔐 Login</a>
+                        <button onclick="history.back()" class="btn btn-secondary">← Go Back</button>
+                        <button onclick="location.reload()" class="btn btn-info">🔄 Retry</button>
+                    </div>
+                    
+                    <!-- Helpful suggestions based on error type -->
+                    <div class="error-suggestions">
+                        <div th:if="${statusCode == 404}">
+                            <h4>Suggestions:</h4>
+                            <ul>
+                                <li>Check the URL for typos</li>
+                                <li>Use the navigation menu to find what you're looking for</li>
+                                <li>Visit our <a th:href="@{/}">homepage</a> to start over</li>
+                            </ul>
+                        </div>
+                        
+                        <div th:if="${statusCode == 403}">
+                            <h4>Access Required:</h4>
+                            <ul>
+                                <li>You need to be logged in to access this page</li>
+                                <li>Make sure you have the correct permissions</li>
+                                <li><a th:href="@{/login}">Login here</a> if you have an account</li>
+                                <li><a th:href="@{/register}">Register here</a> if you need an account</li>
+                            </ul>
+                        </div>
+                        
+                        <div th:if="${statusCode == 500}">
+                            <h4>What you can do:</h4>
+                            <ul>
+                                <li>Try refreshing the page</li>
+                                <li>Wait a few minutes and try again</li>
+                                <li>If the problem persists, please contact support</li>
+                                <li>Check our <a th:href="@{/}">homepage</a> for service status</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bank X. All rights reserved. | Secure Digital Banking</p>
+        </div>
+    </footer>
+
+    <style>
+        .error-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            padding: 2rem 0;
+        }
+        
+        .error-card {
+            background: var(--absa-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(227, 30, 36, 0.1);
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .error-title {
+            color: var(--absa-red);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            color: var(--absa-dark-gray);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-details {
+            background: rgba(248, 249, 250, 0.8);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .error-details p {
+            margin: 0.5rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .error-suggestions {
+            background: rgba(227, 30, 36, 0.05);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: left;
+            border-left: 4px solid var(--absa-red);
+        }
+        
+        .error-suggestions h4 {
+            color: var(--absa-red);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .error-suggestions ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .error-suggestions li {
+            margin-bottom: 0.5rem;
+            color: var(--absa-dark-gray);
+        }
+        
+        .error-suggestions a {
+            color: var(--absa-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .error-suggestions a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .error-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-actions .btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+
+    <script th:src="@{/js/bankx.js}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show error notification
+            setTimeout(() => {
+                if (window.bankX && window.bankX.notifications) {
+                    const statusCode = /*[[${statusCode}]]*/ 500;
+                    const errorTitle = /*[[${errorTitle}]]*/ 'Error';
+                    
+                    if (statusCode === 404) {
+                        bankX.notifications.warning(
+                            'Page Not Found',
+                            'The page you requested could not be found. Please check the URL or use the navigation menu.',
+                            8000
+                        );
+                    } else if (statusCode === 403) {
+                        bankX.notifications.security(
+                            'Access Denied',
+                            'You need to be logged in to access this page. Please login with your credentials.',
+                            8000
+                        );
+                    } else if (statusCode === 500) {
+                        bankX.notifications.error(
+                            'Server Error',
+                            'We encountered a technical issue. Our team has been notified and is working on a fix.',
+                            10000
+                        );
+                    } else {
+                        bankX.notifications.error(
+                            errorTitle,
+                            'An unexpected error occurred. Please try again or contact support if the problem persists.',
+                            8000
+                        );
+                    }
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
