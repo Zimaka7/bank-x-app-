@@ -2,7 +2,7 @@
 
 A comprehensive banking application built with Spring Boot that provides full banking functionality including customer management, account operations, transaction processing, and external bank integration.
 
-## 🏦 Business Requirements Fulfilled
+##  Business Requirements Fulfilled
 
 ### Core Banking Features
 - ✅ **Customer Onboarding**: New customers automatically receive Current and Savings accounts
@@ -19,7 +19,7 @@ A comprehensive banking application built with Spring Boot that provides full ba
 - ✅ **Batch Processing**: Handle multiple transactions in a single request
 - ✅ **End-of-Day Reconciliation**: Offline reconciliation process for Bank Z transactions
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Java 17+
@@ -63,7 +63,7 @@ mvn spring-boot:run
 - **Security**: Spring Security with role-based access control (ADMIN/CUSTOMER)
 - **Session Management**: Secure session handling with CSRF protection
 
-## 🌐 Web Interface
+##  Web Interface
 
 ### Customer Portal Features
 - **Dashboard**: Account overview with balances and recent transactions
@@ -77,7 +77,7 @@ mvn spring-boot:run
 - **Account Monitoring**: Monitor all accounts and balances
 - **Transaction Oversight**: View all system transactions
 
-## 📡 API Endpoints
+##  API Endpoints
 
 ### Customer Management
 ```http
@@ -109,7 +109,7 @@ POST /api/bankz/batch           # Process batch transactions
 POST /api/bankz/reconciliation  # End-of-day reconciliation
 ```
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Technology Stack
 - **Backend**: Spring Boot 3.2.0, Java 17
@@ -126,7 +126,7 @@ POST /api/bankz/reconciliation  # End-of-day reconciliation
 - **Repositories**: JPA repositories with custom queries
 - **Security**: Role-based authentication and authorization
 
-## 💳 Account Types
+##  Account Types
 
 ### Current Account
 - Used for daily transactions and payments
@@ -138,7 +138,7 @@ POST /api/bankz/reconciliation  # End-of-day reconciliation
 - Receives R500 joining bonus
 - Cannot make payments to external accounts
 
-## 🔒 Security Features
+##  Security Features
 
 - **Authentication**: Username/password with BCrypt encryption
 - **Authorization**: Role-based access control (Admin/Customer)
@@ -147,7 +147,7 @@ POST /api/bankz/reconciliation  # End-of-day reconciliation
 - **SQL Injection Protection**: Parameterized queries
 - **XSS Protection**: Output encoding and CSRF tokens
 
-## 🧪 Testing
+##  Testing
 
 ### Running Tests
 ```bash
@@ -167,7 +167,7 @@ mvn test jacoco:report
 - Repository tests with H2 database
 - End-to-end API tests
 
-## 📊 Sample API Usage
+##  API Usage
 
 ### Register New Customer
 ```bash
@@ -205,7 +205,7 @@ curl -X POST http://localhost:9090/api/bankz/transaction \
   }'
 ```
 
-## 🎨 UI Design
+##  UI Design
 
 The web interface features an ABSA-inspired design with:
 - Professional red and white color scheme
@@ -214,7 +214,7 @@ The web interface features an ABSA-inspired design with:
 - Intuitive navigation
 - Real-time updates
 
-## 📝 Configuration
+## Configuration
 
 ### Application Properties
 ```properties
@@ -232,7 +232,7 @@ bankx.savings-interest-rate=0.005
 bankx.transaction-fee-rate=0.0005
 ```
 
-## 🚀 Deployment
+##  Deployment
 
 ### Production Deployment
 1. Build the application: `mvn clean package`
@@ -249,7 +249,7 @@ docker build -t bank-x-app .
 docker-compose up -d
 ```
 
-## 📞 Support
+##  Support
 
 For questions or issues, please refer to the implementation documentation or create an issue in the repository.
 
